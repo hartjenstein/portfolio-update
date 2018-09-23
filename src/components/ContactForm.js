@@ -25,8 +25,9 @@ export class ContactForm extends React.Component {
 
   render() {
     return  (
-      <div>
-        <h1>Drop Me A Line</h1>
+      <div className="content-container">
+        <h1 className="">GET IN TOUCH</h1>
+        <h2 className="headline">Drop Me A Line</h2>
         <Formik
           initialValues={{ 
           name: '',
@@ -44,20 +45,20 @@ export class ContactForm extends React.Component {
           }}
         >
           {({ errors, touched, isSubmitting }) => (
-            <Form>
-            <div>
+            <Form  className="contact__container">
+            <div className="form__field form__field1">
               { touched.name && errors.name && <p>{errors.name}</p> }
-              <FastField type="name" name="name" placeholder="Your Name"/>
+              <FastField className="text-input" type="name" name="name" placeholder="Your Name"/>
             </div>  
-            <div>
+            <div className="form__field form__field2">
               { touched.email && errors.email && <p>{errors.email}</p> }
-              <FastField type="email" name="email" placeholder="Email"/>
+              <FastField className="text-input" type="email" name="email" placeholder="Email"/>
             </div>
-            <div>
+            <div className="form__field form__field3">
               { touched.textarea && errors.textarea && <p>{errors.textarea}</p> }
-              <FastField type="textarea" name="textarea" placeholder="textarea"/>
+              <FastField className="textarea" type="textarea" name="textarea" placeholder="textarea"/>
             </div>
-            <button disabled={isSubmitting} >Submit</button>
+            <button className="form__field button button--form-button" disabled={isSubmitting} >Submit</button>
           </Form>
           )}
         </Formik>

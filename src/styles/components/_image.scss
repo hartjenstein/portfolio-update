@@ -1,0 +1,18 @@
+.image-container {
+  margin-top: 0;
+  min-height: 100%;
+  min-width: 0;
+  order: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  height: auto;
+  left: 0;
+/*   min-height: 413px; */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

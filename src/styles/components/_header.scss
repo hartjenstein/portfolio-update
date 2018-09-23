@@ -1,12 +1,27 @@
 .header {
-  background: $dark-blue;
+  /* background: $dark-blue; */
 }
 
 .header__content {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
+  align-items: baseline;
+  display: column;
+  margin-left: 1rem;
   padding: $s-size 0;
+}
+
+.header__link-container {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .header__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__link-container{
+    justify-content: center;
+  } 
 }
 
 .header__title {

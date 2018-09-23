@@ -7,16 +7,18 @@ export const Header = ({ startLogout }) => (
   <header className="header">
     <div className="content-container">
       <div className="header__content">
-        <Link className="header__title" to="/">
-          <h1>hartjenstein</h1>
+        <Link className="link header__title" to="/">
+          <div className="glitch" data-text="hartjenstein">hartjenstein</div>
         </Link>
-        <Link className="header__title" to="/contact">
-          <h4 className="link">Contact</h4>
-        </Link>
-        <Link className="header__title" to="/about">
-          <h4 className="link">About</h4>
-        </Link>
-        <button className="button button--link" onClick={startLogout}>Logout</button>
+        <div className="link header__link-container">
+          <Link className="link header__title" to="/contact">
+            <h4 className="link__text">Contact</h4>
+          </Link>
+          <Link className="link header__title" to="/about">
+            <h4 className="link__text">About</h4>
+          </Link>
+          <button className="button button--link" onClick={startLogout}>Logout</button>
+        </div>
       </div>
     </div>
   </header>

@@ -17,3 +17,18 @@
 .button--secondary {
   background: #888;
 }
+
+.button--form-button {
+  height: 5rem;
+
+}
+
+/* input, .form-button {
+  height: 10rem;
+  max-width: 100%;
+  min-width: 100%;
+} */
+
+.button:disabled {
+  background: hsla(306, 11%, 50%, 0.68);
+}
