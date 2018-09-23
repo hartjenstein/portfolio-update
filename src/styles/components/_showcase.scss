@@ -1,0 +1,17 @@
+
+
+.showcase__container {
+  align-items: stretch; 
+  display: grid;
+  grid-gap: 2px;
+  @media (min-width: 780px) {
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+.showcase__item{
+  border: 1px solid white;
+  height: 300px;
+  padding-top: 13rem;
+  text-align: center; 
+}
