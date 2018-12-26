@@ -2,10 +2,10 @@ import React from 'react';
 import Header from './Header';
 import ShowCase from './ShowCase';
 
-const PortfolioPage = () => (
+const PortfolioFrontPage = () => (
   <div>
     <ShowCase />
   </div>
 );
 
-export default PortfolioPage;
+export default PortfolioFrontPage;

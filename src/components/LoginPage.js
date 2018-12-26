@@ -1,19 +1,15 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { startLogin } from '../actions/auth';
+import LoginForm from './LoginForm';
 
-export const LoginPage = ({ startLogin }) => (
+export const LoginPage = () => (
   <div className="box-layout">
     <div className="box-layout__box">
-      <h1 className="box-layout__title">Boilerplate</h1>
-      <p>Tag line for app.</p>
-      <button className="button" onClick={startLogin}>Login with Google</button>
+      <h1 className="box-layout__title">Hartjentein Portfolio</h1>
+      <p>You need admin rights to be able to login</p>
+      <LoginForm />
     </div>
   </div>
 );
 
-const mapDispatchToProps = (dispatch) => ({
-  startLogin: () => dispatch(startLogin())
-});
 
-export default connect(undefined, mapDispatchToProps)(LoginPage);
+export default LoginPage;

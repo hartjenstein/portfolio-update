@@ -1,5 +1,6 @@
 @import './base/settings';
 @import './base/base';
+@import './base/js-helpers';
 @import './components/box-layout';
 @import './components/button';
 @import './components/header';
@@ -9,10 +10,13 @@
 @import './components/inputs';
 /* @import './components/form'; */
 @import './components/visibility';
-@import './components/list';
+@import './components/section';
 @import './components/link';
 @import './components/loader';
 @import './components/showcase';
 @import './components/messageModal';
 @import './components/contact';
 @import './components/glitch-effekt';
+@import './components/portfolio-section-filters';
+@import './components/dashboard';
+//@import './components/flip-effekt';

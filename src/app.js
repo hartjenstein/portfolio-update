@@ -4,11 +4,14 @@ import { Provider } from 'react-redux';
 import AppRouter, { history } from './routers/AppRouter';
 import configureStore from './store/configureStore';
 import { login, logout } from './actions/auth';
+import { startSetPortfolioItems, listenToChange } from './actions/sectionItems.js';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
+
+/// Todo - firebase auth not 100% /// 
 
 const store = configureStore();
 const jsx = (
@@ -24,18 +27,21 @@ const renderApp = () => {
   }
 };
 ReactDOM.render(jsx, document.getElementById('app'));
-//ReactDOM.render(<LoadingPage />, document.getElementById('app'));
+store.dispatch(startSetPortfolioItems())
+  renderApp(); 
 
-/* firebase.auth().onAuthStateChanged((user) => {
+/* ReactDOM.render(<LoadingPage />, document.getElementById('app')); */
+
+firebase.auth().onAuthStateChanged((user) => {
+  console.log('changed', user)
   if (user) {
+    console.log(user.uid)
     store.dispatch(login(user.uid));
     renderApp();
-    if (history.location.pathname === '/') {
-      history.push('/dashboard');
-    }
+    history.push('/');
   } else {
+    console.log('logged out!')
     store.dispatch(logout());
     renderApp();
-    history.push('/');
   }
-}); */
+});
