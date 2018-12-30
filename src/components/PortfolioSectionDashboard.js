@@ -8,8 +8,8 @@ import { connect } from 'react-redux';
 export const PortfolioSectionDashboard = (props) => (
     <div className="content-container">
       <div className="dashboard__head">
-        <PortfolioSectionFilters sectionName={props.match.url.substring(9)}/>
-        <div className="page-header__actions">
+        <PortfolioSectionFilters className="dashboard__grid-item" sectionName={props.match.url.substring(9)}/>
+        <div className="page-header__actions dashboard__grid-item">
         {props.user.uid && <Link className="button" to="/create">Add Project</Link>}
         </div>
       </div>

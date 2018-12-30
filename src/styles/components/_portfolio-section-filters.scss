@@ -1,7 +1,12 @@
 .input-group.filter__container {
     margin: 0 auto 0 0;
-}
 
-.input-group {
-  display: flex;
+    .text-input {
+      background: black;
+      border: 1px solid $off-white;
+      color: $off-white;
+    }
+    .text-input::placeholder {
+      color: $off-white;
+    }
 }

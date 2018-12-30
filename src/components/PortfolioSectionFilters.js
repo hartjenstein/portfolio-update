@@ -20,8 +20,9 @@ export class PortfolioSectionFilters extends React.Component {
   render() { 
       return (
         <div>
-          <div className="input-group">
+          <div className="input-group filter__container">
             <div className="input-group__item">
+                <label className="label" for="select">Displayed Projects:</label>
                 <input className="text-input" placeholder="Search Projects" type="text" value={this.props.filters.text} onChange={this.onTextFilterChange} />
             </div>
             <div className="input-group__item">
