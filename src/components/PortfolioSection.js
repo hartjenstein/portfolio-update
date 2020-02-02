@@ -5,7 +5,9 @@ import selectSection from '../selectors/sections';
 //import { history } from '../routers/AppRouter';
 //exporting the unconnected function for testing with enzyme
 export const PortfolioSection = (props) => {
-
+  const setAnimationTime = (animationTime = 0) => {
+    return animationTime + 100;
+  }
   const handleClick = (id) => {
     setTimeout(() => {
       props.history.push(`/edit/${id}`);
@@ -25,15 +27,22 @@ export const PortfolioSection = (props) => {
                 <div className="section-item section-item__message">
                   <span>No Projects available</span>
                 </div>
-      
-              ) : props.portfolioItems.map((portfolioItem) => (
+                
+              ) : props.portfolioItems.map((portfolioItem, index) => {
+                const animationTime = (index + 1) * 100;
+        
+                return ( 
                   <PortfolioSectionItem 
+                  animationTime={animationTime}
+                  itemIndex={index}
                   key={portfolioItem.id}
                   {...portfolioItem}
                   {...props.userAuth}
                   handleClick={handleClick}
                   />
-          ))}
+                )
+              }
+          )}
         </div>
     </div>
     );

@@ -10,6 +10,7 @@ import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import { firebase } from './firebase/firebase';
 import LoadingPage from './components/LoadingPage';
+import { setTimeout } from 'timers';
 
 /// Todo - firebase auth not 100% /// 
 
@@ -19,6 +20,10 @@ const jsx = (
     <AppRouter />
   </Provider>
 );
+
+
+/* ReactDOM.render(<LoadingPage />, document.getElementById('app')); */
+
 let hasRendered = false;
 const renderApp = () => {
   if (!hasRendered) {
@@ -26,11 +31,9 @@ const renderApp = () => {
     hasRendered = true;
   }
 };
-ReactDOM.render(jsx, document.getElementById('app'));
+/* ReactDOM.render(jsx, document.getElementById('app')); */
 store.dispatch(startSetPortfolioItems())
   renderApp(); 
-
-/* ReactDOM.render(<LoadingPage />, document.getElementById('app')); */
 
 firebase.auth().onAuthStateChanged((user) => {
   console.log('changed', user)

@@ -4,10 +4,14 @@
   color: $grey;
   display: flex;
   justify-content: space-between;
+  margin-bottom: $m-size;
   padding: $s-size $m-size;
 }
 
 .section__body {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-gap: 1rem;
   margin-bottom: $m-size;
   @media (min-width: $desktop-breakpoint) {
     margin-bottom: $l-size;
@@ -15,14 +19,15 @@
 }
 
 .section-item {
+  animation: fadein 1s ease-out normal backwards;
   border: 1px solid darken($off-white, 7%);
-  border-top: none;
   color:  $off-white;
   display: flex;
   flex-direction: column;
   padding: $s-size;
   text-decoration: none;
-  transition: background .3s ease, color 1.2s ease;
+  transition: background .3s ease, color 1.2s ease, animation .250ms;
+   
   &:hover {
     background: $off-white;
     color: $dark-grey;
@@ -70,5 +75,19 @@
   @media (min-width: $desktop-breakpoint) {
     margin: 0;
     padding-left: $s-size;
+  }
+}
+
+// animation 
+
+@keyframes fadein {
+  0% {
+    transform: scale(0);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
   }
 }
